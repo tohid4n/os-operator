@@ -1,0 +1,2 @@
+This is a sample file containing the word agent for testing purposes.
+This file should be found by the OS-Copilot tool and copied to the agents folder. 
