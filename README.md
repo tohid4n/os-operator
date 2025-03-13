@@ -51,7 +51,7 @@ OS-Copilot is an open-source library to build generalist agents capable of autom
 
 2. **Set Up Python Environment and Install Dependencies:**
 
-   **For macOS/Linux:**
+   **For macOS/Linux/Windows:**
    ```
    conda create -n oscopilot_env python=3.10 -y
    conda activate oscopilot_env
@@ -60,55 +60,10 @@ OS-Copilot is an open-source library to build generalist agents capable of autom
    pip install -e .
    ```
 
-   **For Windows:**
-   ```
-   conda create -n oscopilot_env python=3.10 -y
-   conda activate oscopilot_env
-
-   cd OS-Copilot
-   pip install -e .
-   ```
-
-   Alternatively, you can use the provided Windows installation script:
-   ```
-   windows_install.bat
-   ```
 
    Note for Windows users: Make sure you have PowerShell installed (included by default in Windows 10 and later). You may need to run PowerShell as administrator and set the execution policy to allow running scripts:
-   ```
-   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
-
-   **Troubleshooting Windows Installation:**
    
-   If you encounter dependency conflicts during installation on Windows, try the following:
-   
-   1. Use the Pydantic fix script (recommended):
-      ```
-      python fix_pydantic.py
-      ```
-      This script fixes the common "ForwardRef._evaluate() missing 1 required keyword-only argument: 'recursive_guard'" error by installing compatible versions of Pydantic and LangChain.
       
-   2. Or use the general dependency fix script:
-      ```
-      python fix_dependencies.py
-      ```
-      
-   3. Or install dependencies manually:
-      ```
-      pip install pydantic==1.10.8
-      pip install langchain-core==0.0.13
-      pip install langchain-community==0.0.1
-      pip install langchain==0.0.349
-      pip install langsmith==0.0.69
-      ```
-   
-   4. To test if the Windows implementation is working correctly, run:
-      ```
-      python test_windows_simple.py
-      ```
-      
-      This will test basic PowerShell functionality without relying on the full OS-Copilot infrastructure.
 
 3. **Set OpenAI API Key:** Configure your OpenAI API key in [.env](.env).
 
